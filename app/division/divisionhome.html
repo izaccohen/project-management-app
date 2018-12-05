@@ -1,100 +1,34 @@
 <navbar-projectmng></navbar-projectmng>
 
 <h1>division page</h1>
-<div class="container mt-5">
-        <h1>Recipes     {{5+6}} {{a}}</h1>
-        <div class="row">
-            <div class="col-sm-6 col-md-4 my-2" >
-                <div class="card recipe">
-                    <div class="card-body">
-                        <h4 class="card-title">fgdfgdfg {{9+6}}</h4>
-                        <p class="card-text">fgdfgdfg</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-        <div class="row">
-            <div class="col-sm-6 col-md-4 my-2" ng-repeat="recipe in recipes">
-                <div class="card recipe">
-                    <img class="card-img-top" ng-src="{{recipe.imgUrl}}" alt="">
-                    <div class="card-body">
-                        <h4 class="card-title">{{recipe.name}}</h4>
-                        <p class="card-text">{{recipe.description}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!-- <div class="container mt-5">
+<div class="container ">
                 
-        <div class="row">
-            <div class="col-sm-6 col-md-4 my-2" >
+        <div class="col-sm-6 col-md-4 my-2" >
+            <div id="accordion" ng-repeat="recipe in recipes">
                 <div class="card ">
-                        <h1>tasks </h1>
-
-                        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                                <a class="navbar-brand" href="#">Crew 1</a>
-                        
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                        
-                                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                        
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item" >
-                                            <a class="nav-link" href="#">owner</a>
-                                        </li>
-                                        <li class="nav-item" >
-                                            <a class="nav-link" href="#">project</a>
-                                        </li>
-                                        <li class="nav-item" >
-                                            <a class="nav-link" href="#">dueDate</a>
-                                        </li>
-                        
-                                        <li class="nav-item" >
-                                            <a class="nav-link" href="#" >status</a>
-                                        </li>
-                                        <li class="nav-item" >
-                                                <a class="nav-link" href="#" >priority</a>
-                                            </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">
-                                                Task headline | owner | dueDate
-                                            </button>
-                                        </h5>
-                                    </div>
-                        
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            Task description:
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                            wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                            eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                            assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                            nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                            labore sustainable VHS.
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div> 
-                    
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0 ">
+                      <button class="btn btn-link mx-auto width100 " data-toggle="collapse" data-target="#{{recipe.name}}" aria-expanded="true" aria-controls="{{recipe.name}}">
+                            {{recipe.description}}
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="{{recipe.name}}" class="collapse show width100" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                            {{recipe.ingredients}}
+                    </div>
+                  </div>
                 </div>
-            </div>
+                
+                
+              </div>  
+        </div>
             
                 
-        </div>
         
-    </div> -->
+        
+    </div>
+
+    
+
