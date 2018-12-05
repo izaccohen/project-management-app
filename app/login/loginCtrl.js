@@ -1,7 +1,7 @@
 app.controller("loginCtrl", function($scope, $location, user) {
     
-    $scope.email = "";
-    $scope.pwd = "";
+    $scope.email = "izac@izac.com";
+    $scope.pwd = "123";
 
     $scope.invalidLogin = false;
 

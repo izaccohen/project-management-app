@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
 
     }).when("/division" , {
         templateUrl: "app/division/divisionhome.html",
-        controller: "newRecipeCtrl"
+        controller: "diviCtrl"
     })
 
     .when("/crew", {
