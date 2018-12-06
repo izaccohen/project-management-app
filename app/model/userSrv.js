@@ -1,5 +1,5 @@
 
-app.factory("user", function($q, $http) {
+app.factory("user", function($q, $http,tasks) {
 
     var activeUser = null;
     
@@ -39,6 +39,7 @@ app.factory("user", function($q, $http) {
 
     function logout() {
         activeUser = null;
+        tasks.cleanTasks();
     }
 
     function getActiveUser() {

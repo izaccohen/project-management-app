@@ -12,10 +12,7 @@ app.config(function($routeProvider) {
         controller: "divCtrl"
     })
 
-    .when("/crew", {
-        templateUrl: "app/crew/crewhome.html",
-        controller: "recipeGalleryCtrl"
-    })
+    
 })
 
 

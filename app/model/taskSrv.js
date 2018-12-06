@@ -18,12 +18,12 @@ app.factory("tasks", function ($q, $http) {
 
 
         var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?status=open";
-
+        task = [];
         $http.get(getTasksURL).then(function (response) {
-            debugger;
             for (var i = 0; i < response.data.length; i++) {
                 var task = new Task(response.data[i]);
                 tasks.push(task);
+                
             }
 
             async.resolve(tasks);
@@ -34,6 +34,11 @@ app.factory("tasks", function ($q, $http) {
 
     return async.promise;
 }
+function cleanTasks(tasks) {
+    tasks = [];
+
+    
+}
 
 
 
@@ -42,7 +47,8 @@ app.factory("tasks", function ($q, $http) {
 
     return {
         getFilteredTasks: getFilteredTasks,
-
+        cleanTasks: cleanTasks,
+        
 }
 
 

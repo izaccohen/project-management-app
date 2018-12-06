@@ -43,7 +43,7 @@
             "owner": "izac",
             "dueDate":"tbd",
             "description": "do something3 for the project",
-            "status": "open",
+            "status": "closed",
             "meetingCode": "su051218"
         },
         {
@@ -63,7 +63,7 @@
             "owner": "iris",
             "dueDate":"tbd",
             "description": "do something5 for the project",
-            "status": "open",
+            "status": "closed",
             "meetingCode": "ch061218"
         },
         {

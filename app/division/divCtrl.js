@@ -1,7 +1,9 @@
-app.controller("divCtrl", function($scope, tasks){
-
+app.controller("divCtrl", function($scope, user, tasks,$location){
+    if (!user.isLoggedIn()) {
+        $location.path("/");
+        return;
+    }
     tasks.getFilteredTasks().then(function (tasks) {
-        debugger;
         $scope.tasks = tasks;
     }, function(error) {
         
