@@ -1,6 +1,7 @@
 app.controller("divCtrl", function($scope, tasks){
 
     tasks.getFilteredTasks().then(function (tasks) {
+        debugger;
         $scope.tasks = tasks;
     }, function(error) {
         
