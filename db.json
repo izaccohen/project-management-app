@@ -15,38 +15,66 @@
             "pwd": "123"
         }
     ],
-    "recipes": [
+    "tasks": [
         {
-            "id": 1,
-            "name": "Shakshuka",
-            "description": "Amazing egg dish with tomatto souce",
-            "ingredients": "Egg, Tomatto, Onion",
-            "steps": "Pout eggs and then tomatto",
-            "userId": 1
+            "taskId":"why1",
+            "crew": "a",
+            "project": "korea",
+            "owner": "iris",
+            "dueDate":"tbd",
+            "description": "do something1 for the project",
+            "status": "open",
+            "meetingCode": "ch061218"
         },
         {
-            "id": 2,
-            "name": "Shakshuka",
-            "description": "Amazing egg dish with tomatto souce",
-            "ingredients": "Egg, Tomatto, Onion",
-            "steps": "Pout eggs and then tomatto",
-            "userId": 1
+            "taskId":"why2",
+            "crew": "a",
+            "project": "korea",
+            "owner": "iris",
+            "dueDate":"tbd",
+            "description": "do something2 for the project",
+            "status": "open",
+            "meetingCode": "ch061218"
         },
         {
-            "id": 3,
-            "name": "Shakshuka",
-            "description": "Amazing egg dish with tomatto souce",
-            "ingredients": "Egg, Tomatto, Onion",
-            "steps": "Pout eggs and then tomatto",
-            "userId": 2
+            "taskId":"why3",
+            "crew": "b",
+            "project": "speedy",
+            "owner": "izac",
+            "dueDate":"tbd",
+            "description": "do something3 for the project",
+            "status": "open",
+            "meetingCode": "su051218"
         },
         {
-            "id": 4,
-            "name": "Shakshuka",
-            "description": "Amazing egg dish with tomatto souce",
-            "ingredients": "Egg, Tomatto, Onion",
-            "steps": "Pout eggs and then tomatto",
-            "userId": 2
-        }        
+            "taskId":"why4",
+            "crew": "b",
+            "project": "speedy",
+            "owner": "iris",
+            "dueDate":"tbd",
+            "description": "do something4 for the project",
+            "status": "open",
+            "meetingCode": "su051218"
+        },
+        {
+            "taskId":"why5",
+            "crew": "a",
+            "project": "firma",
+            "owner": "iris",
+            "dueDate":"tbd",
+            "description": "do something5 for the project",
+            "status": "open",
+            "meetingCode": "ch061218"
+        },
+        {
+            "taskId":"why6",
+            "crew": "c",
+            "project": "never",
+            "owner": "iris",
+            "dueDate":"tbd",
+            "description": "do something6 for the project",
+            "status": "open",
+            "meetingCode": "pa061218"
+        }               
     ]
 }
