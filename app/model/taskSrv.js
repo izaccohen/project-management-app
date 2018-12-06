@@ -1,7 +1,7 @@
 app.factory("tasks", function ($q, $http) {
-    var tasks = {};
+    var tasks = [];
 
-    function task(plainTask) {
+    function Task(plainTask) {
         this.taskId = plainTask.taskId;
         this.crew = plainTask.crew;
         this.project = plainTask.project;
@@ -20,7 +20,7 @@ app.factory("tasks", function ($q, $http) {
 
         $http.get(getTasksURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
-                var task = new task(response.data[i]);
+                var task = new Task(response.data[i]);
                 tasks.push(task);
             }
 
@@ -28,9 +28,10 @@ app.factory("tasks", function ($q, $http) {
         }, function (error) {
             async.reject(error);
         });
-    }
+    
 
     return async.promise;
+}
 
 
 
