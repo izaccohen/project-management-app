@@ -3,11 +3,27 @@ app.controller("divCtrl", function($scope, user, tasks,$location){
         $location.path("/");
         return;
     }
-    tasks.getFilteredTasks().then(function (tasks) {
-        $scope.tasks = tasks;
-    }, function(error) {
-        
-    })
+        $scope.taskId = "";
+        $scope.crew = "";
+        $scope.project = "";
+        $scope.owner = "";
+        $scope.dueDate = "";
+        $scope.description = "";
+        $scope.status = "open";
+        $scope.meetingCode = "";
+
+        $scope.search = function () {
+            tasks.getFilteredTasks($scope.taskId, $scope.crew, $scope.project, $scope.owner,$scope.dueDate, $scope.description, 
+                $scope.status, $scope.meetingCode  ).then(function (tasks) {
+                $scope.tasks = tasks;
+            }, function(error) {
+                
+            })
+            
+        }
+        $scope.search(); 
+
+    
 
 
 // $scope.test="blabla";

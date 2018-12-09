@@ -12,13 +12,25 @@ app.factory("tasks", function ($q, $http) {
         this.meetingCode = plainTask.meetingCode;
     }
 
-    function getFilteredTasks() {
+    function getFilteredTasks(taskId, crew, project, owner, dueDate, description, status, meetingCode ) {
         var async = $q.defer();
+        
+        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?status="+ status
+        + (taskId? "&taskId=" + taskId:'')
+       + (crew? "&crew=" + crew:"")
+        + (project?"&project=" + project:"" )
+        + (owner?"&owner=" + owner:"")
+        + (dueDate?"&dueDate=" + dueDate:"")
+        + (description?"&description=" + description:"")
+        + (meetingCode?"&meetingCode=" + meetingCode:"");
+    
 
 
 
-        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?status=open";
-        task = [];
+
+
+        
+        tasks = [];
         $http.get(getTasksURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 var task = new Task(response.data[i]);
@@ -34,7 +46,7 @@ app.factory("tasks", function ($q, $http) {
 
     return async.promise;
 }
-function cleanTasks(tasks) {
+function cleanTasks() {
     tasks = [];
 
     
