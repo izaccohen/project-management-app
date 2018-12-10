@@ -1,0 +1,49 @@
+<div class="container mt-5">
+
+<h1>Add a new task: </h1>
+
+    <form ng-submit="createTask()">
+        <div class="form-row col-md-3">
+                <div class="form-group col-md-12">
+
+            <input type="text" class="form-control" placeholder="Enter task id" ng-model="nTaskId" >
+                </div>
+        </div>
+        <div class="form-row col-md-12">
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" placeholder="Enter Crew name" ng-model="ncrew" >
+        </div>
+
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control"placeholder="Enter Project name" ng-model="nproject" >
+        </div>
+      </div>
+      <div class="form-row col-md-12">
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" placeholder="Enter Task owner name" ng-model="nowner">
+        </div>
+
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control"placeholder="Enter Task staus: open/closed/started" ng-model="nstatus">
+        </div>
+      </div>
+      <div class="form-row col-md-12">
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control" placeholder="Enter dueDate" ng-model="ndueDate">
+        </div>
+
+        <div class="form-group col-md-4">
+          <input type="text" class="form-control"placeholder="Enter Meeting code" ng-model="nmeetingCode">
+        </div>
+      </div>
+      <div class="form-row col-md-12">
+            <textarea class="form-control" placeholder="Enter Task description" rows="6"ng-model="nTaskDescription"></textarea>
+    </div>
+    <br>
+    <br>
+      
+      
+
+      <button type="submit" class="btn btn-primary">Submit  new task</button>
+    </form>
+</div>

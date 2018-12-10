@@ -1,5 +1,8 @@
 app.factory("tasks", function ($q, $http) {
     var tasks = [];
+    var wasEverLoaded = false;
+
+
 
     function Task(plainTask) {
         this.taskId = plainTask.taskId;
@@ -14,7 +17,11 @@ app.factory("tasks", function ($q, $http) {
 
     function getFilteredTasks(taskId, crew, project, owner, dueDate, description, status, meetingCode ) {
         var async = $q.defer();
-        
+        if (wasEverLoaded) {
+            async.resolve(tasks);
+        } else {
+            tasks = [];}
+
         var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
         + (status? "&status=" + status:'')
         + (taskId? "&taskId=" + taskId:'')
@@ -24,13 +31,6 @@ app.factory("tasks", function ($q, $http) {
         + (dueDate?"&dueDate=" + dueDate:"")
         + (description?"&description=" + description:"")
         + (meetingCode?"&meetingCode=" + meetingCode:"");
-    
-
-
-
-
-
-        
         tasks = [];
         $http.get(getTasksURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
@@ -38,6 +38,8 @@ app.factory("tasks", function ($q, $http) {
                 tasks.push(task);
                 
             }
+            wasEverLoaded = true;
+
 
             async.resolve(tasks);
         }, function (error) {
@@ -52,7 +54,21 @@ function cleanTasks() {
 
     
 }
+function createTask(nTaskId, ncrew, nproject, nowner, ndueDate, nTaskDescription, nstatus, nmeetingCode ) {
+    var async = $q.defer();
 
+
+    var newTask = new Task({taskId:nTaskId, crew: ncrew, project: nproject,
+        owner: nowner, dueDate: ndueDate, description: nTaskDescription, 
+        status: nstatus, meetingCode: nmeetingCode});
+
+    
+
+        tasks.push(newTask);
+    async.resolve(newTask);
+
+    return async.promise;
+}
 
 
     
@@ -61,6 +77,7 @@ function cleanTasks() {
     return {
         getFilteredTasks: getFilteredTasks,
         cleanTasks: cleanTasks,
+        createTask: createTask,
         
 }
 

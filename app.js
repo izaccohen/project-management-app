@@ -10,6 +10,9 @@ app.config(function($routeProvider) {
     }).when("/division" , {
         templateUrl: "app/division/divisionhome.html",
         controller: "divCtrl"
+    }).when("/new" , {
+        templateUrl: "app/division/newTask.html",
+        controller: "newTaskCtrl"
     })
 
     
