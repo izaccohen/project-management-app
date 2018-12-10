@@ -15,7 +15,8 @@ app.factory("tasks", function ($q, $http) {
     function getFilteredTasks(taskId, crew, project, owner, dueDate, description, status, meetingCode ) {
         var async = $q.defer();
         
-        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?status="+ status
+        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
+        + (status? "&status=" + status:'')
         + (taskId? "&taskId=" + taskId:'')
        + (crew? "&crew=" + crew:"")
         + (project?"&project=" + project:"" )

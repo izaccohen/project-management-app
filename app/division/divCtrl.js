@@ -11,6 +11,7 @@ app.controller("divCtrl", function($scope, user, tasks,$location){
         $scope.description = "";
         $scope.status = "open";
         $scope.meetingCode = "";
+        $scope.filterDeclaration= "";
 
         $scope.search = function () {
             tasks.getFilteredTasks($scope.taskId, $scope.crew, $scope.project, $scope.owner,$scope.dueDate, $scope.description, 
@@ -22,6 +23,7 @@ app.controller("divCtrl", function($scope, user, tasks,$location){
             
         }
         $scope.search(); 
+        
 
     
 
