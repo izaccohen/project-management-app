@@ -18,31 +18,30 @@ app.controller("meetingsCtrl", function($scope, meetapp, user, tasks,$location) 
             
         }
         $scope.displayAll(); 
+        $scope.taskId = "";
+        $scope.crew = "";
+        $scope.project ="";
+        $scope.owner = "";
+        $scope.dueDate = "";
+        $scope.description = "";
+        $scope.status = "";
+        $scope.meetingCode ="";
+        
 
+$scope.dispActiveMeetingTasks= function (){
+    $scope.meetingCode = myMeet;
 
-
-
-    // $scope.meetings =[
+        tasks.getFilteredTasks($scope.taskId, $scope.crew, $scope.project, $scope.owner,$scope.dueDate, $scope.description, 
+            $scope.status, $scope.meetingCode  ).then(function (arrtasks) {
+            $scope.meettasks = arrtasks;
+        }, function(error) {
             
-    //     {
-    //         "meetingCode": "ch061218",
-    //         "participants": "iris, zahi, haim",
-    //         "pcrew": "a",
-    //         "meetingDate": "12/12/2018"
-    //     },
-    //     {
-    //         "meetingCode": "su051218",
-    //         "participants": "roni, anat, haim",
-    //         "pcrew": "b",
-    //         "meetingDate": "12/12/2018"
-    //     },
-    //     {
-    //         "meetingCode": "pa061218",
-    //         "participants": "yuval, nimrod, michael",
-    //         "crew": "c",
-    //         "meetingDate": "12/12/2018"
-    //     }
-    //     ];
+        })
+
+}
+
+
+    
         
 
 })

@@ -29,27 +29,47 @@
       
           <div class="form-group col-md-8">
                 <h1> To see all tasks of a meeting click the meeting link bellow: </h1>
-            <div id="accordion" ng-repeat="meet in meetings">
+            <div id="accordion" ng-repeat="meet in meetings"  >
               <div class="card ">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#{{meet.meetingCode}}" aria-expanded="true" aria-controls="{{meet.meetingCode}}">
-                      Meeting code: {{meet.meetingCode}} | Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}
-                    </button>
+                      <label ng-submit="dispActiveMeetingTasks()"  >
+                         <button type="submit" class="btn btn-primary"  ng-model="myMeet"  > Meeting code: {{meet.meetingCode}} </button>| Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}
+                          
+                        </label>  
+                    
+                    
                   </h5>
                 </div>
       
-                <div id="{{meet.meetingCode}}" class="collapse  " aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    {{meet.participants}}
-                  </div>
-                </div>
+                
               </div>
       
       
             </div>
           </div>
-      
+      <h1>here will come the tasks included in a meeting code</h1>
+      <div class="form-group col-md-8">
+          <div id="accordion" ng-repeat="mask in meettasks">
+            <div class="card ">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#{{mask.taskId}}" aria-expanded="true" aria-controls="{{mask.taskId}}">
+                    Crew: {{mask.crew}} | Project: {{mask.project}} | Owner: {{mask.owner}} | Due date: {{mask.dueDate}}    | Status: {{mask.status}}
+                  </button>
+                </h5>
+              </div>
+    
+              <div id="{{mask.taskId}}" class="collapse  " aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  {{mask.description}}
+                </div>
+              </div>
+            </div>
+    
+    
+          </div>
+        </div>
       
       
       
