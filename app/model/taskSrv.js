@@ -2,16 +2,7 @@ app.factory("tasks", function ($q, $http) {
     var tasks = [];
     var wasEverLoaded = false;
 
-    function project(plainProject) {
-        this.taskId = plainTask.taskId;
-        this.crew = plainTask.crew;
-        this.project = plainTask.project;
-        this.owner = plainTask.owner;
-        this.dueDate = plainTask.dueDate;
-        this.description = plainTask.description;
-        this.status = plainTask.status;
-        this.meetingCode = plainTask.meetingCode;
-    }
+    
 
     function Task(plainTask) {
         this.taskId = plainTask.taskId;

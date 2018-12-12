@@ -1,1 +1,57 @@
 <navbar-projectmng></navbar-projectmng>
+<div class="container mt-5">
+        <div>
+            
+          <h1> Filter meetings  by: </h1>
+      
+          <form >
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
+                <input type="text" class="form-control" placeholder="Enter Crew name" ng-model="pcrew" >
+              </div>
+      
+              
+      
+              <div class="form-group col-md-4">
+                <input type="text" class="form-control"placeholder="Enter Meeting code" ng-model="meetingCode">
+              </div>
+            </div>
+            
+            
+      
+            <button type="submit" class="btn btn-primary">Submit your search</button>
+          </form>
+      
+          <br>
+          
+          <br>
+          <br>
+      
+          <div class="form-group col-md-8">
+                <h1> To see all tasks of a meeting click the meeting link bellow: </h1>
+            <div id="accordion" ng-repeat="meet in meetings">
+              <div class="card ">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#{{meet.meetingCode}}" aria-expanded="true" aria-controls="{{meet.meetingCode}}">
+                      Meeting code: {{meet.meetingCode}} | Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}
+                    </button>
+                  </h5>
+                </div>
+      
+                <div id="{{meet.meetingCode}}" class="collapse  " aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    {{meet.participants}}
+                  </div>
+                </div>
+              </div>
+      
+      
+            </div>
+          </div>
+      
+      
+      
+      
+        </div>
+      </div>
