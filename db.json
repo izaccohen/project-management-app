@@ -1,4 +1,24 @@
 {
+    "meetings": [
+        {
+            "meetingCode": "ch061218",
+            "participants": "iris, zahi, haim",
+            "crew": "a",
+            "meetingDate": "12/12/2018"
+        },
+        {
+            "meetingCode": "su051218",
+            "participants": "roni, anat, haim",
+            "crew": "b",
+            "meetingDate": "12/12/2018"
+        },
+        {
+            "meetingCode": "pa061218",
+            "participants": "yuval, nimrod, michael",
+            "crew": "c",
+            "meetingDate": "12/12/2018"
+        }
+    ],
     "users": [
         {
             "id": 1,
