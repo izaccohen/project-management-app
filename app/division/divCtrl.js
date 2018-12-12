@@ -15,8 +15,8 @@ app.controller("divCtrl", function($scope, user, tasks,$location){
 
         $scope.search = function () {
             tasks.getFilteredTasks($scope.taskId, $scope.crew, $scope.project, $scope.owner,$scope.dueDate, $scope.description, 
-                $scope.status, $scope.meetingCode  ).then(function (tasks) {
-                $scope.tasks = tasks;
+                $scope.status, $scope.meetingCode  ).then(function (arrtasks) {
+                $scope.tasks = arrtasks;
             }, function(error) {
                 
             })
