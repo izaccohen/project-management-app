@@ -13,6 +13,9 @@ app.config(function($routeProvider) {
     }).when("/new" , {
         templateUrl: "app/division/newTask.html",
         controller: "newTaskCtrl"
+    }).when("/meet" , {
+        templateUrl: "app/division/meetingssumeries.html",
+        controller: "meetingsCtrl"
     })
 
     

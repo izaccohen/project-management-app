@@ -11,7 +11,15 @@
                 <li class="nav-item" ng-hide="isUserLoggedIn()">
                     <a class="nav-link" href="#!/login">Login</a>
                 </li>
-                
+                <li class="nav-item" ng-show="isUserLoggedIn()">
+                        <a class="nav-link" href="#!/division" >Filter tasks</a>
+                    </li>
+                <li class="nav-item" ng-show="isUserLoggedIn()">
+                        <a class="nav-link" href="#!/new" >Add a new task</a>
+                    </li>
+                    <li class="nav-item" ng-show="isUserLoggedIn()">
+                            <a class="nav-link" href="#!/meet" >See meet-sum</a>
+                        </li>
                 <li class="nav-item" ng-show="isUserLoggedIn()">
                     <a class="nav-link" href="#" ng-click="logout()">Logout</a>
                 </li>

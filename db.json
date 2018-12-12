@@ -3,13 +3,13 @@
         {
             "meetingCode": "ch061218",
             "participants": "iris, zahi, haim",
-            "crew": "a",
+            "pcrew": "a",
             "meetingDate": "12/12/2018"
         },
         {
             "meetingCode": "su051218",
             "participants": "roni, anat, haim",
-            "crew": "b",
+            "pcrew": "b",
             "meetingDate": "12/12/2018"
         },
         {
