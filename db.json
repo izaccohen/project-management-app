@@ -76,5 +76,55 @@
             "status": "open",
             "meetingCode": "pa061218"
         }               
+    ],
+    "projects": [
+        {
+            
+            "crew": "a",
+            "project": "korea",
+            "launchDate":"tbd",
+            "description": "3 skus segment aaaa",
+            "status": "open"
+        },
+        {
+            
+            "crew": "a",
+            "project": "boxy",
+            "launchDate":"tbd",
+            "description": "5 skus segment bbbbbbbbb",
+            "status": "open"
+        },
+        {
+            
+            "crew": "b",
+            "project": "domestic",
+            "launchDate":"tbd",
+            "description": "3 skus market wwwwwwwwwww",
+            "status": "open"
+        },
+        {
+            
+            "crew": "b",
+            "project": "speedy",
+            "launchDate":"tbd",
+            "description": "6 skus segment qqqqqqqq",
+            "status": "open"
+        },
+        {
+            
+            "crew": "c",
+            "project": "firma",
+            "launchDate":"tbd",
+            "description": "12 skus market  tttttttttt",
+            "status": "open"
+        },
+        {
+            
+            "crew": "c",
+            "project": "never",
+            "launchDate":"tbd",
+            "description": "3 skus segment aRRRRRRRRRRaaa",
+            "status": "open"
+        }               
     ]
 }
