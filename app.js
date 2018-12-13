@@ -16,6 +16,9 @@ app.config(function($routeProvider) {
     }).when("/meet" , {
         templateUrl: "app/division/meetingssumeries.html",
         controller: "meetingsCtrl"
+    }).when("/newMeeting" , {
+        templateUrl: "app/division/newMeeting.html",
+        controller: "newMeetingCtrl"
     })
 
     

@@ -1,7 +1,8 @@
 <navbar-projectmng></navbar-projectmng>
 <div class="container mt-5">
         <div>
-            
+<div>      <a class="btn btn-success" href="#!/newMeeting" >Create a new meeting</a>
+</div>
           <h1> Filter meetings  by: </h1>
       
           <form >
@@ -33,7 +34,7 @@
               <div class="card ">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                         <button type="submit" class="btn btn-primary"   ng-click="dispActiveMeetingTasks(meet.meetingCode)" >  </button><span>      Meeting code: {{meet.meetingCode}}| Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}</span>
+                         <button type="submit" class="btn btn-primary"   ng-click="dispActiveMeetingTasks(meet.meetingCode)" >  </button><span>      Meeting code: {{meet.meetingCode}}| Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}|Participants {{meet.participants}}</span>
                           
                     
                     
