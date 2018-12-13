@@ -1,4 +1,4 @@
-app.factory("tasks", function ($q, $http, meetapp) {
+app.factory("tasks", function ($q, $http, ) {
     var tasks = [];
     var wasEverLoaded = false;
 
