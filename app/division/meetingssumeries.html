@@ -33,10 +33,8 @@
               <div class="card ">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                      <label ng-submit="dispActiveMeetingTasks()"  >
-                         <button type="submit" class="btn btn-primary"  ng-model="myMeet"  > Meeting code: {{meet.meetingCode}} </button>| Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}
+                         <button type="submit" class="btn btn-primary"   ng-click="dispActiveMeetingTasks(meet.meetingCode)" >  </button><span>      Meeting code: {{meet.meetingCode}}| Date: {{meet.meetingDate}}    | Crew: {{meet.pcrew}}</span>
                           
-                        </label>  
                     
                     
                   </h5>

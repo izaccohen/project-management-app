@@ -20,7 +20,7 @@ app.factory("tasks", function ($q, $http, ) {
         if (wasEverLoaded) {
             async.resolve(tasks);
         } else {
-            tasks = [];}
+            tasks = [];
 
         var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
         + (status? "&status=" + status:'')
@@ -44,7 +44,7 @@ app.factory("tasks", function ($q, $http, ) {
             async.resolve(tasks);
         }, function (error) {
             async.reject(error);
-        });
+        });}
     
 
     return async.promise;
@@ -71,13 +71,16 @@ function createTask(nTaskId, ncrew, nproject, nowner, ndueDate, nTaskDescription
 }
 
 
-    
+    function resetWasEverLoaded() {
+        wasEverLoaded= false;
+    }
 
 
     return {
         getFilteredTasks: getFilteredTasks,
         cleanTasks: cleanTasks,
         createTask: createTask,
+        resetWasEverLoaded: resetWasEverLoaded
         
 }
 

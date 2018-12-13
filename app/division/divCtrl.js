@@ -9,7 +9,7 @@ app.controller("divCtrl", function($scope, user, tasks,$location){
         $scope.owner = "";
         $scope.dueDate = "";
         $scope.description = "";
-        $scope.status = "open";
+        $scope.status = "";
         $scope.meetingCode = "";
         $scope.filterDeclaration= "";
 

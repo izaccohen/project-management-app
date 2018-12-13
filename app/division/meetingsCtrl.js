@@ -18,22 +18,18 @@ app.controller("meetingsCtrl", function($scope, meetapp, user, tasks,$location) 
             
         }
         $scope.displayAll(); 
-        $scope.taskId = "";
-        $scope.crew = "";
-        $scope.project ="";
-        $scope.owner = "";
-        $scope.dueDate = "";
-        $scope.description = "";
-        $scope.status = "";
-        $scope.meetingCode ="";
+        
         
 
-$scope.dispActiveMeetingTasks= function (){
-    $scope.meetingCode = myMeet;
+        
 
-        tasks.getFilteredTasks($scope.taskId, $scope.crew, $scope.project, $scope.owner,$scope.dueDate, $scope.description, 
-            $scope.status, $scope.meetingCode  ).then(function (arrtasks) {
-            $scope.meettasks = arrtasks;
+$scope.dispActiveMeetingTasks= function (meetcode){
+
+    $scope.meettasks = [];
+    tasks.resetWasEverLoaded() ;
+        tasks.getFilteredTasks("", "", "", "","", "", 
+        "", meetcode ).then(function (newarr) {
+            $scope.meettasks = newarr;
         }, function(error) {
             
         })
