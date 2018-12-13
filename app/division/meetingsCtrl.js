@@ -30,6 +30,22 @@ $scope.dispActiveMeetingTasks= function (meetcode){
         tasks.getFilteredTasks("", "", "", "","", "", 
         "", meetcode ).then(function (newarr) {
             $scope.meettasks = newarr;
+
+            function createPdf (newarr) {
+                var opt = {
+                    margin: 1,
+                    filename: 'myOrder.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+        
+                var worker = html2pdf().set(opt).from(newarr).toPdf().save();
+                var t = document.getElementById("toPdf");
+        workShopSrv.createPdf(t);
+            }
+        
+
         }, function(error) {
             
         })
