@@ -22,7 +22,7 @@ app.factory("tasks", function ($q, $http, ) {
         } else {
             tasks = [];
 
-        var getTasksURL = "https://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
+        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
         + (status? "&status=" + status:'')
         + (taskId? "&taskId=" + taskId:'')
        + (crew? "&crew=" + crew:"")
@@ -32,7 +32,7 @@ app.factory("tasks", function ($q, $http, ) {
         + (description?"&description=" + description:"")
         + (meetingCode?"&meetingCode=" + meetingCode:"");
         tasks = [];
-        $http.get(getTasksURL).then(function (response) {
+        $https.get(getTasksURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 var task = new Task(response.data[i]);
                 tasks.push(task);
