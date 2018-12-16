@@ -6,7 +6,7 @@
     <h1> Tasks, filtered by: </h1> 
 
 
-    <form ng-submit="search()">
+    <form >
       <div class="form-row col-md-12">
         <div class="form-group col-md-4">
           <input type="text" class="form-control" placeholder="Enter Crew name" ng-model="crew" >
@@ -37,7 +37,7 @@
       
       
 
-      <button type="submit" class="btn btn-primary">Submit your search</button>
+      <button type="submit" class="btn btn-primary" ng-click="search (crew,project,owner,status,dueDate,meetingCode)">Submit your search</button>
       <a class="btn btn-success" href="#!/new" >Add a new task</a>
 
     </form>

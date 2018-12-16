@@ -15,7 +15,7 @@ app.factory("meetapp", function($q, $http, tasks,user) {
         } else {
             meets = [];
 
-        var getMeetingURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/meetings";
+        var getMeetingURL = "https://my-json-server.typicode.com/izaccohen/project-management-app/meetings";
         meets = [];
         $http.get(getMeetingURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {

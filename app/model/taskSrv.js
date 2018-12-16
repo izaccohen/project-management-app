@@ -19,11 +19,11 @@ app.factory("tasks", function ($q, $http,  ) {
         var async = $q.defer();
         if (wasEverLoaded) {
             async.resolve(tasks);
-        } else {
-            tasks = [];
+            
 
-        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+status
-        + (status? "&status=" + status:'')
+        } else {
+            tasks = [];}
+        var getTasksURL = "https://my-json-server.typicode.com/izaccohen/project-management-app/tasks?" + (status? "&status=" + status:'')
         + (taskId? "&taskId=" + taskId:'')
        + (crew? "&crew=" + crew:"")
         + (project?"&project=" + project:"" )
@@ -44,7 +44,7 @@ app.factory("tasks", function ($q, $http,  ) {
             async.resolve(tasks);
         }, function (error) {
             async.reject(error);
-        });}
+        });
     
 
     return async.promise;
