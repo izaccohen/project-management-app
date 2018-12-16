@@ -1,4 +1,4 @@
-app.factory("meetapp", function($q, $https, tasks,user) {
+app.factory("meetapp", function($q, $http, tasks,user) {
     var meets = [];
     var wasEverLoaded = false;
     function Meet(plainmeet) {
@@ -17,7 +17,7 @@ app.factory("meetapp", function($q, $https, tasks,user) {
 
         var getMeetingURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/meetings";
         meets = [];
-        $https.get(getMeetingURL).then(function (response) {
+        $http.get(getMeetingURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 var meet = new Meet(response.data[i]);
                 meets.push(meet);
