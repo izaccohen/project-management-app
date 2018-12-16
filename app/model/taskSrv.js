@@ -32,7 +32,7 @@ app.factory("tasks", function ($q, $http, ) {
         + (description?"&description=" + description:"")
         + (meetingCode?"&meetingCode=" + meetingCode:"");
         tasks = [];
-        $https.get(getTasksURL).then(function (response) {
+        $http.get(getTasksURL).then(function (response) {
             for (var i = 0; i < response.data.length; i++) {
                 var task = new Task(response.data[i]);
                 tasks.push(task);
