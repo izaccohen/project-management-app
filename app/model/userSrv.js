@@ -17,7 +17,7 @@ app.factory("user", function($q, $http,tasks) {
 
         var loginURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/users?email=" +
             email + "&pwd=" + pwd;
-        $http.get(loginURL).then(function(response) {
+        $https.get(loginURL).then(function(response) {
             if (response.data.length > 0) {
                 // success login
                 activeUser = new User(response.data[0]);
