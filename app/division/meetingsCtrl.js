@@ -30,20 +30,31 @@ $scope.dispActiveMeetingTasks= function (meetcode){
         tasks.getFilteredTasks("", "", "", "","", "", 
         "", meetcode ).then(function (newarr) {
             $scope.meettasks = newarr;
+           
 
-            function createPdf (newarr) {
-                var opt = {
-                    margin: 1,
-                    filename: 'myOrder.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-                };
-        
-                var worker = html2pdf().set(opt).from(newarr).toPdf().save();
-                var t = document.getElementById("toPdf");
-        workShopSrv.createPdf(t);
+
+
+
+            $scope.doc = new jsPDF()
+
+
+            $scope.doc.text(20, 30 ,  'Meeting summery code:  '+  meetcode);
+            $scope.doc.text(20, 40 ,  'Crew:  '+  newarr[0].crew);
+
+            $scope.doc.addPage();
+
+            for(var i = 0; i < newarr.length; i ++) {
+                    $scope.doc.text(20,50, $scope.doc.splitTextToSize(Object.values(newarr[i]),180));
+                    $scope.doc.addPage();
+                    // $scope.doc.text(20, 50 + (i * 20),  'Task id: \n'+ newarr[i].taskId +' xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n  Project: '+ newarr[i].project +'   Owner: '+ newarr[i].owner +'   Duedate: '+ newarr[i].dueDate);
+   
             }
+            
+
+
+            $scope.doc.save(meetcode)
+
+            
         
 
         }, function(error) {
@@ -51,6 +62,7 @@ $scope.dispActiveMeetingTasks= function (meetcode){
         })
 
 }
+ 
 
 
     
