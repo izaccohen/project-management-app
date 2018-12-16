@@ -22,7 +22,7 @@ app.factory("tasks", function ($q, $http, ) {
         } else {
             tasks = [];
 
-        var getTasksURL = "http://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
+        var getTasksURL = "https://my-json-server.typicode.com/izaccohen/project-management-app/tasks?"+ status
         + (status? "&status=" + status:'')
         + (taskId? "&taskId=" + taskId:'')
        + (crew? "&crew=" + crew:"")
