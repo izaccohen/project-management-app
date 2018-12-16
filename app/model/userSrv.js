@@ -1,5 +1,5 @@
 
-app.factory("user", function($q, $http,tasks) {
+app.factory("user", function($q, $https,tasks) {
 
     var activeUser = null;
     

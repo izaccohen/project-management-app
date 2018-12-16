@@ -1,4 +1,4 @@
-app.factory("meetapp", function($q, $http, tasks,user) {
+app.factory("meetapp", function($q, $https, tasks,user) {
     var meets = [];
     var wasEverLoaded = false;
     function Meet(plainmeet) {
