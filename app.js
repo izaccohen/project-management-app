@@ -8,16 +8,16 @@ app.config(function($routeProvider) {
         controller: "loginCtrl"
 
     }).when("/division" , {
-        templateUrl: "app/division/divisionhome.html",
+        templateUrl: "app/tasks/taskhome.html",
         controller: "divCtrl"
     }).when("/new" , {
-        templateUrl: "app/division/newTask.html",
+        templateUrl: "app/tasks/newTask.html",
         controller: "newTaskCtrl"
     }).when("/meet" , {
-        templateUrl: "app/division/meetingssumeries.html",
+        templateUrl: "app/meetings/meetingssumeries.html",
         controller: "meetingsCtrl"
     }).when("/newMeeting" , {
-        templateUrl: "app/division/newMeeting.html",
+        templateUrl: "app/meetings/newMeeting.html",
         controller: "newMeetingCtrl"
     })
 
