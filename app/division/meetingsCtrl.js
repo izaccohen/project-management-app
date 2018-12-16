@@ -31,22 +31,41 @@ $scope.dispActiveMeetingTasks= function (meetcode){
         "", meetcode ).then(function (newarr) {
             $scope.meettasks = newarr;
            
-
+           
+            $scope. today = new Date();
+            $scope. dd = $scope.today.getDate();
+            $scope. mm = $scope.today.getMonth()+1; //January is 0!
+            $scope. yyyy =$scope.today.getFullYear();
+            
+            if($scope.dd<10) {
+                $scope.dd = '0'+$scope.dd
+            } 
+            
+            if($scope.mm<10) {
+                $scope.mm = '0'+$scope.mm
+            } 
+            
+            $scope.today = $scope.mm + '/' + $scope.dd + '/' + $scope.yyyy;
 
 
 
             $scope.doc = new jsPDF()
-
-
-            $scope.doc.text(20, 30 ,  'Meeting summery code:  '+  meetcode);
+            $scope.doc.setFontSize(9);
+            $scope.doc.text(15, 20 ,  'Date published: '+   $scope.today );
+            $scope.doc.setFontSize(11);
+            $scope.doc.text(20, 30 ,  'Meeting summery code:'+  meetcode );
             $scope.doc.text(20, 40 ,  'Crew:  '+  newarr[0].crew);
+            $scope.doc.text(20, 50 ,  'Each task is printed on its own page (untill bug is fixed)  ');
+            $scope.doc.text(20, 60 ,  'in this meeting code there are:   '+ newarr.length + '   tasks');
+
+
 
             $scope.doc.addPage();
 
             for(var i = 0; i < newarr.length; i ++) {
                     $scope.doc.text(20,50, $scope.doc.splitTextToSize(Object.values(newarr[i]),180));
                     $scope.doc.addPage();
-                    // $scope.doc.text(20, 50 + (i * 20),  'Task id: \n'+ newarr[i].taskId +' xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n  Project: '+ newarr[i].project +'   Owner: '+ newarr[i].owner +'   Duedate: '+ newarr[i].dueDate);
+                    // $scope.doc.text(20, 50 + (i * 20),  'Task id: \n'+ newarr[i].taskId +' xx\n  Project: '+ newarr[i].project +'   Owner: '+ newarr[i].owner +'   Duedate: '+ newarr[i].dueDate);
    
             }
             
