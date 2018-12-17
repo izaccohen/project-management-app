@@ -1,5 +1,7 @@
 app.factory("meetapp", function($q, $http, tasks,user) {
     var meets = [];
+    var searchmeets = [];
+
     var wasEverLoaded = false;
     function Meet(plainmeet) {
         this.meetingCode = plainmeet.meetingCode;
@@ -35,6 +37,31 @@ app.factory("meetapp", function($q, $http, tasks,user) {
     return async.promise;
 }
 
+function searchMeetings(meetingCode, participants, pcrew, meetingDate ) {
+    var async = $q.defer();
+    
+
+    var searchMeetingURL = "https://my-json-server.typicode.com/izaccohen/project-management-app/meetings?" + (pcrew? "&pcrew=" + pcrew:'')+ (meetingCode? "&meetingCode=" + meetingCode:'');
+    searchmeets = [];
+    $http.get(searchMeetingURL).then(function (response) {
+        for (var i = 0; i < response.data.length; i++) {
+            var searchmeet = new Meet(response.data[i]);
+            searchmeets.push(searchmeet);
+            
+        }
+
+
+        async.resolve(searchmeets);
+    }, function (error) {
+        async.reject(error);
+    });
+
+
+return async.promise;
+}
+
+
+
 function createMeeting(nMeetingCode, nParticipants, nPcrew, nMeetingDate ) {
     var async = $q.defer();
 
@@ -52,6 +79,7 @@ function createMeeting(nMeetingCode, nParticipants, nPcrew, nMeetingDate ) {
 return {
     getAllMeetings: getAllMeetings,
     createMeeting:createMeeting,
+    searchMeetings:searchMeetings,
     
     
 }

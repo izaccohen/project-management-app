@@ -19,6 +19,18 @@ app.controller("meetingsCtrl", function($scope, meetapp, user, tasks,$location) 
         }
         $scope.displayAll(); 
         
+
+        $scope.displaySearch = function () {
+            meetapp.searchMeetings($scope.meetingCode, $scope.participants, $scope.pcrew, $scope.meetingDate ).then(function (arrSearchMeets) {
+                $scope.meetings = arrSearchMeets;
+            }, function(error) {
+                
+            })
+            
+        }
+
+
+
         
 
         

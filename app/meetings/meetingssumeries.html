@@ -20,7 +20,7 @@
             
             
       
-            <button type="submit" class="btn btn-primary">Submit your search</button>
+            <button type="submit" class="btn btn-primary"ng-click="displaySearch (meetingCode,pcrew)">Submit your search</button>
           </form>
       
           <br>
@@ -56,7 +56,7 @@
               <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
                   <button class="btn btn-link" data-toggle="collapse" data-target="#{{mask.taskId}}" aria-expanded="true" aria-controls="{{mask.taskId}}">
-                    Crew: {{mask.crew}} | Project: {{mask.project}} | Owner: {{mask.owner}} | Due date: {{mask.dueDate}}    | Status: {{mask.status}}
+                    {{meet.meetingCode}}  | Crew: {{mask.crew}} | Project: {{mask.project}} | Owner: {{mask.owner}} | Due date: {{mask.dueDate}}    | Status: {{mask.status}}
                   </button>
                 </h5>
               </div>
