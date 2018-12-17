@@ -65,7 +65,6 @@ $scope.dispActiveMeetingTasks= function (meetcode){
             for(var i = 0; i < newarr.length; i ++) {
                     $scope.doc.text(20,50, $scope.doc.splitTextToSize(Object.values(newarr[i]),180));
                     $scope.doc.addPage();
-                    // $scope.doc.text(20, 50 + (i * 20),  'Task id: \n'+ newarr[i].taskId +' xx\n  Project: '+ newarr[i].project +'   Owner: '+ newarr[i].owner +'   Duedate: '+ newarr[i].dueDate);
    
             }
             
